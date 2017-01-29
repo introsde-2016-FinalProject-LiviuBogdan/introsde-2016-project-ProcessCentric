@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "BusinessLogic", targetNamespace = "http://ws.soap.businesslogic.lifecoach/", wsdlLocation = "http://127.0.1.1:6904/ws/business?wsdl")
+@WebServiceClient(name = "BusinessLogic", targetNamespace = "http://ws.soap.businesslogic.lifecoach/", wsdlLocation = "https://virtual-lifecoach-business.herokuapp.com/ws/business?wsdl")
 public class BusinessLogic_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class BusinessLogic_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://127.0.1.1:6904/ws/business?wsdl");
+            url = new URL("https://virtual-lifecoach-business.herokuapp.com/ws/business?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -4,7 +4,7 @@ import javax.ws.rs.ApplicationPath;
 
 import org.glassfish.jersey.server.ResourceConfig;
 
-@ApplicationPath("adapter")
+@ApplicationPath("gateway")
 public class MyApplicationConfig extends ResourceConfig {
     public MyApplicationConfig () {
         packages("lifecoach.pc.rest.server.resources");
