@@ -33,6 +33,17 @@ public class ProfileResource {
 	Request request;
 	
 	@GET
+	@Produces({MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
+	public List<Person> getPeople(){
+		
+		System.out.println("Getting all people");
+        StorageService service = new StorageService();
+        Storage storage = service.getStorageImplPort();
+
+        return storage.readPersonList();
+	}
+	
+	@GET
 	@Path("{id}")
 	@Produces({MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
 	public Person getPerson(@PathParam("id") long id){
