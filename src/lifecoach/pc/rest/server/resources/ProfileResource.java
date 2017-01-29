@@ -33,7 +33,7 @@ public class ProfileResource {
 	Request request;
 	
 	@GET
-	@Path("/{id}")
+	@Path("{id}")
 	@Produces({MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
 	public Person getPerson(@PathParam("id") long id){
 		
@@ -45,7 +45,7 @@ public class ProfileResource {
 	}
 	
 	@PUT
-	@Path("/{id}")
+	@Path("{id}")
 	@Consumes({MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
 	@Produces({MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
 	public Person updatePerson(Person person, @PathParam("id") long id){
@@ -74,15 +74,22 @@ public class ProfileResource {
         return pHolder.value;
 	}
 	
-	@GET
-	@Path("/{id}/goal")
-	@Produces({MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
-	public GoalResource getGoal(@PathParam("id") long id){
-		
-		System.out.println("Getting person "+id);
-        StorageService service = new StorageService();
-        Storage storage = service.getStorageImplPort();
-
-        return new GoalResource(uriInfo, request, id);
+	@Path("{id}/goals/")
+	public GoalResource getGoalList(@PathParam("id") long id) {
+		System.out.println("Entering AchievementResource...");
+		return new GoalResource(uriInfo, request, id);
+	}	
+	
+	@Path("{id}/achievements/")
+	public AchievementResource getAchievementList(@PathParam("id") long id) {
+		System.out.println("Entering AchievementResource...");
+		return new AchievementResource(uriInfo, request, id);
 	}
+
+	@Path("{id}/history/{measureType}")
+	public MeasureResource getHistory(@PathParam("id") long id, @PathParam("measureType") String name) {
+		System.out.println("Entering MeasureResource...");
+		return new MeasureResource(uriInfo, request, id, name);
+	}
+	
 }

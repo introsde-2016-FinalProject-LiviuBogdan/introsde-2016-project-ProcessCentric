@@ -31,14 +31,14 @@ public interface BusinessLogic {
      * @param measure
      * @param personId
      * @return
-     *     returns java.lang.String
+     *     returns lifecoach.businesslogic.soap.ws.Feedback
      */
     @WebMethod
     @WebResult(name = "person", targetNamespace = "")
     @RequestWrapper(localName = "savePersonMeasure", targetNamespace = "http://ws.soap.businesslogic.lifecoach/", className = "lifecoach.businesslogic.soap.ws.SavePersonMeasure")
     @ResponseWrapper(localName = "savePersonMeasureResponse", targetNamespace = "http://ws.soap.businesslogic.lifecoach/", className = "lifecoach.businesslogic.soap.ws.SavePersonMeasureResponse")
     @Action(input = "http://ws.soap.businesslogic.lifecoach/BusinessLogic/savePersonMeasureRequest", output = "http://ws.soap.businesslogic.lifecoach/BusinessLogic/savePersonMeasureResponse")
-    public String savePersonMeasure(
+    public Feedback savePersonMeasure(
         @WebParam(name = "personId", targetNamespace = "")
         long personId,
         @WebParam(name = "measure", targetNamespace = "")

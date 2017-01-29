@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="person" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="person" type="{http://ws.soap.businesslogic.lifecoach/}feedback" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -31,17 +31,17 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class SavePersonMeasureResponse {
 
-    protected String person;
+    protected Feedback person;
 
     /**
      * Gets the value of the person property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Feedback }
      *     
      */
-    public String getPerson() {
+    public Feedback getPerson() {
         return person;
     }
 
@@ -50,10 +50,10 @@ public class SavePersonMeasureResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Feedback }
      *     
      */
-    public void setPerson(String value) {
+    public void setPerson(Feedback value) {
         this.person = value;
     }
 

@@ -24,6 +24,7 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _Feedback_QNAME = new QName("http://ws.soap.businesslogic.lifecoach/", "feedback");
     private final static QName _SavePersonMeasure_QNAME = new QName("http://ws.soap.businesslogic.lifecoach/", "savePersonMeasure");
     private final static QName _SavePersonMeasureResponse_QNAME = new QName("http://ws.soap.businesslogic.lifecoach/", "savePersonMeasureResponse");
 
@@ -32,6 +33,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link Feedback }
+     * 
+     */
+    public Feedback createFeedback() {
+        return new Feedback();
     }
 
     /**
@@ -48,6 +57,15 @@ public class ObjectFactory {
      */
     public SavePersonMeasureResponse createSavePersonMeasureResponse() {
         return new SavePersonMeasureResponse();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Feedback }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.soap.businesslogic.lifecoach/", name = "feedback")
+    public JAXBElement<Feedback> createFeedback(Feedback value) {
+        return new JAXBElement<Feedback>(_Feedback_QNAME, Feedback.class, null, value);
     }
 
     /**

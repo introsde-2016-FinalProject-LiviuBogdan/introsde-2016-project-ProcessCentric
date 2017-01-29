@@ -98,7 +98,7 @@
             </target>    
     	
     	<!-- Target installs and downloads ivy libraries and compiles the project -->
-        <target name="install" depends="clean, init, generateStorageStub">
+        <target name="install" depends="clean, init, generateStorageStub, generateLogicStub">
             <echo message="Compile target has been called" />
             <javac srcdir="${src.dir}" destdir="${build.dir}" classpathref="lib.path.id" includeAntRuntime="false">
             </javac>
