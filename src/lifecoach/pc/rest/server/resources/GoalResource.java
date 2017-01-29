@@ -54,6 +54,17 @@ public class GoalResource {
        // System.out.println(goals.size());
 
         return goals;
+	}		
+	
+	@POST
+	@Produces({MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
+	public Goal savePersonGoal(Goal g) {
+
+		System.out.println("Saving goal");
+        StorageService service = new StorageService();
+        Storage storage = service.getStorageImplPort();
+
+        return storage.createGoal(g, personId);
 	}	
 	
 	@GET
