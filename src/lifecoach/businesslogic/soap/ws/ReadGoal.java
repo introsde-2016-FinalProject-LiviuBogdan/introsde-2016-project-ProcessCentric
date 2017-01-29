@@ -1,5 +1,5 @@
 
-package lifecoach.storageservice.soap.ws;
+package lifecoach.businesslogic.soap.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for readAchievementList complex type.
+ * <p>Java class for readGoal complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="readAchievementList">
+ * &lt;complexType name="readGoal">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="personId" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="goalId" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,27 +26,27 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "readAchievementList", propOrder = {
-    "personId"
+@XmlType(name = "readGoal", propOrder = {
+    "goalId"
 })
-public class ReadAchievementList {
+public class ReadGoal {
 
-    protected long personId;
+    protected long goalId;
 
     /**
-     * Gets the value of the personId property.
+     * Gets the value of the goalId property.
      * 
      */
-    public long getPersonId() {
-        return personId;
+    public long getGoalId() {
+        return goalId;
     }
 
     /**
-     * Sets the value of the personId property.
+     * Sets the value of the goalId property.
      * 
      */
-    public void setPersonId(long value) {
-        this.personId = value;
+    public void setGoalId(long value) {
+        this.goalId = value;
     }
 
 }

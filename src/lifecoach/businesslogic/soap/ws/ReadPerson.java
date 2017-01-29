@@ -1,5 +1,5 @@
 
-package lifecoach.storageservice.soap.ws;
+package lifecoach.businesslogic.soap.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for readAchievementList complex type.
+ * <p>Java class for readPerson complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="readAchievementList">
+ * &lt;complexType name="readPerson">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -26,10 +26,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "readAchievementList", propOrder = {
+@XmlType(name = "readPerson", propOrder = {
     "personId"
 })
-public class ReadAchievementList {
+public class ReadPerson {
 
     protected long personId;
 

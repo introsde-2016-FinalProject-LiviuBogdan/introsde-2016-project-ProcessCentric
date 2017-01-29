@@ -30,30 +30,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Person }
-     * 
-     */
-    public Person createPerson() {
-        return new Person();
-    }
-
-    /**
-     * Create an instance of {@link HealthMeasureHistory }
-     * 
-     */
-    public HealthMeasureHistory createHealthMeasureHistory() {
-        return new HealthMeasureHistory();
-    }
-
-    /**
-     * Create an instance of {@link Goal }
-     * 
-     */
-    public Goal createGoal() {
-        return new Goal();
-    }
-
-    /**
      * Create an instance of {@link Measure }
      * 
      */
@@ -62,27 +38,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Achievement }
-     * 
-     */
-    public Achievement createAchievement() {
-        return new Achievement();
-    }
-
-    /**
      * Create an instance of {@link MeasureDefinition }
      * 
      */
     public MeasureDefinition createMeasureDefinition() {
         return new MeasureDefinition();
-    }
-
-    /**
-     * Create an instance of {@link Person.CurrentHealth }
-     * 
-     */
-    public Person.CurrentHealth createPersonCurrentHealth() {
-        return new Person.CurrentHealth();
     }
 
 }

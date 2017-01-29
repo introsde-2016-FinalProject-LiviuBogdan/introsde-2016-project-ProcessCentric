@@ -1,5 +1,5 @@
 
-package lifecoach.storageservice.soap.ws;
+package lifecoach.businesslogic.soap.ws;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -16,7 +16,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="personId" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,27 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "readGoalList", propOrder = {
-    "personId"
-})
+@XmlType(name = "readGoalList")
 public class ReadGoalList {
 
-    protected long personId;
-
-    /**
-     * Gets the value of the personId property.
-     * 
-     */
-    public long getPersonId() {
-        return personId;
-    }
-
-    /**
-     * Sets the value of the personId property.
-     * 
-     */
-    public void setPersonId(long value) {
-        this.personId = value;
-    }
 
 }

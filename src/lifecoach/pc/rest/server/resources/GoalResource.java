@@ -20,7 +20,6 @@ import lifecoach.storageservice.soap.ws.StorageService;
 
 @Stateless
 @LocalBean
-@Path("/goal")
 public class GoalResource {
 
 	// Allows to insert contextual objects into the class,
@@ -29,7 +28,13 @@ public class GoalResource {
 	UriInfo uriInfo;
 	@Context
 	Request request;
-
+	long personId;
+	
+	public GoalResource(UriInfo uriInfo, Request request,long personId) {
+		this.uriInfo = uriInfo;
+		this.request = request;
+		this.personId = personId;
+	}
 	@GET
 	@Path("/goals")
 	@Produces({MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
@@ -39,7 +44,7 @@ public class GoalResource {
         StorageService service = new StorageService();
         Storage storage = service.getStorageImplPort();
         
-        List<Goal> goals = storage.readGoalList();
+        List<Goal> goals = storage.readGoalList(personId);
         System.out.println(goals.size());
 
         return Response.ok().entity(goals).build();
@@ -66,7 +71,7 @@ public class GoalResource {
         StorageService service = new StorageService();
         Storage storage = service.getStorageImplPort();
         
-        List<Achievement> achievements = storage.readAchievementList();
+        List<Achievement> achievements = storage.readAchievementList(personId);
         System.out.println(achievements.size());
 
         return Response.ok().entity(achievements).build();

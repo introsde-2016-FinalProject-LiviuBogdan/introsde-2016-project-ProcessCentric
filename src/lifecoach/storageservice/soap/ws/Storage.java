@@ -34,6 +34,7 @@ public interface Storage {
 
     /**
      * 
+     * @param personId
      * @return
      *     returns java.util.List<lifecoach.localdb.soap.ws.Goal>
      */
@@ -42,7 +43,9 @@ public interface Storage {
     @RequestWrapper(localName = "readGoalList", targetNamespace = "http://ws.soap.storageservice.lifecoach/", className = "lifecoach.storageservice.soap.ws.ReadGoalList")
     @ResponseWrapper(localName = "readGoalListResponse", targetNamespace = "http://ws.soap.storageservice.lifecoach/", className = "lifecoach.storageservice.soap.ws.ReadGoalListResponse")
     @Action(input = "http://ws.soap.storageservice.lifecoach/Storage/readGoalListRequest", output = "http://ws.soap.storageservice.lifecoach/Storage/readGoalListResponse")
-    public List<Goal> readGoalList();
+    public List<Goal> readGoalList(
+        @WebParam(name = "personId", targetNamespace = "")
+        long personId);
 
     /**
      * 
@@ -100,6 +103,7 @@ public interface Storage {
 
     /**
      * 
+     * @param personId
      * @return
      *     returns java.util.List<lifecoach.localdb.soap.ws.Achievement>
      */
@@ -108,7 +112,9 @@ public interface Storage {
     @RequestWrapper(localName = "readAchievementList", targetNamespace = "http://ws.soap.storageservice.lifecoach/", className = "lifecoach.storageservice.soap.ws.ReadAchievementList")
     @ResponseWrapper(localName = "readAchievementListResponse", targetNamespace = "http://ws.soap.storageservice.lifecoach/", className = "lifecoach.storageservice.soap.ws.ReadAchievementListResponse")
     @Action(input = "http://ws.soap.storageservice.lifecoach/Storage/readAchievementListRequest", output = "http://ws.soap.storageservice.lifecoach/Storage/readAchievementListResponse")
-    public List<Achievement> readAchievementList();
+    public List<Achievement> readAchievementList(
+        @WebParam(name = "personId", targetNamespace = "")
+        long personId);
 
     /**
      * 

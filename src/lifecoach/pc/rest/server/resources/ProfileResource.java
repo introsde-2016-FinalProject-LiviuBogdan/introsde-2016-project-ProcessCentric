@@ -73,4 +73,16 @@ public class ProfileResource {
         
         return pHolder.value;
 	}
+	
+	@GET
+	@Path("/{id}/goal")
+	@Produces({MediaType.APPLICATION_JSON ,  MediaType.APPLICATION_XML })
+	public GoalResource getGoal(@PathParam("id") long id){
+		
+		System.out.println("Getting person "+id);
+        StorageService service = new StorageService();
+        Storage storage = service.getStorageImplPort();
+
+        return new GoalResource(uriInfo, request, id);
+	}
 }
